@@ -457,7 +457,7 @@ class FilesIndex(DatasetIndex):
     def build_key(fullpathname, no_ext=False):
         """ Create index item from full path name. """
         # Andre updated to use hash
-		key_name = hash(fullpathname)
+        key_name = hash(fullpathname)
 		key_name = os.path.basename(fullpathname)
         if no_ext:
             dot_position = key_name.rfind('.')
