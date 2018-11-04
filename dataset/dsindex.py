@@ -444,7 +444,8 @@ class FilesIndex(DatasetIndex):
         """ Build index from a path/glob. """
         check_fn = os.path.isdir if dirs else os.path.isfile
         pathlist = glob.iglob(path, recursive=True)
-        _full_index = np.asarray([self.build_key(fname, no_ext) for fname in pathlist if check_fn(fname)])
+        #_full_index = np.asarray([self.build_key(fname, no_ext) for fname in pathlist if check_fn(fname)])
+        _full_index = np.asarray([self.build_key(fname, no_ext) for fname in pathlist])
         if len(_full_index):
             _index = _full_index[:, 0]
             _paths = _full_index[:, 1]
